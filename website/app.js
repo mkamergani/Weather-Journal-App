@@ -8,9 +8,6 @@ let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
 
 // Get Data from open weather map api 
-
-
-
 document.getElementById('generate').addEventListener('click', performAction);
 
 function performAction(e){
@@ -19,9 +16,7 @@ const userResponse = document.getElementById("feelings").value;
 if(zip != "")
 {
     getWeatherData(baseURL,zip,apiKey)
-    .then(function(data){
-        
-        console.log(data.main.temp);
+      .then(function(data){
         postData('/add', {temperature:data.main.temp, date: newDate, userResponse:userResponse} );
       }).then(()=> updateUI())
 }
@@ -38,9 +33,9 @@ const getWeatherData = async (baseURL, zip, apiKey)=>{
     const data = await res.json();
     console.log(data)
     return data;
-  }  catch(error) {
-    console.log("error", error);
-    
+  }
+  catch(error) {
+    console.log("error", error); 
   }
 }
 
@@ -57,10 +52,10 @@ const postData = async ( url = '', data = {})=>{
 
     try {
       const newData = await response.json();
-             return newData
-    }catch(error) {
-    console.log("error", error);
-    
+      return newData
+    }
+    catch(error) {
+      console.log("error", error);
     }
 }
 
@@ -77,7 +72,7 @@ const updateUI = async () => {
     }catch(error){
       console.log("error", error);
     }
-  }
+}
 
 
 

@@ -38,12 +38,9 @@ function getData (req, res){
 
 app.post('/add',addData)
 function addData(req, res){
-    console.log("Data posted ");
+    console.log("Data posted");
     projectData ["temperature"] = req.body.temperature;
     projectData ["date"] = req.body.date;
     projectData ["userResponse"] = req.body.userResponse;
     console.log(projectData);
-   
-    
-    
 }
