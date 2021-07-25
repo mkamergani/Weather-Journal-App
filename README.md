@@ -1,5 +1,5 @@
 # Weather Journal App
-a project 2 of Front End Developer Udacity Nanodegree
+project 2 of Front End Developer Udacity Nanodegree
 
 # Description
 A web app that uses OpenWeatherMap API to get weather based on user's location, and dynamically update UI.
